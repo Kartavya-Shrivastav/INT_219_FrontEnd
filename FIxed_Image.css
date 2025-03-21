@@ -1,0 +1,56 @@
+body{
+    /* background-image: url("Tree.jpg"); */
+    background-repeat: no-repeat;
+    background-position: top right;
+    margin-right: 200px;
+    background-attachment: fixed;
+}
+
+.border{
+    border-width: 2px;
+    height: 100px;
+    width: 100px;
+}
+
+#none{
+    border-style: none;
+}
+
+#hidden{
+    border: hidden;
+}
+
+#mixed{
+    /* border-style: 2px ; */
+    border-style: dotted dashed solid groove;
+}
+
+
+a:active{
+    background-color: aquamarine;
+    color: black;
+}
+
+a:visited{
+    color: green;
+}
+
+a:link{
+    color: red;
+}
+
+a:hover{
+    color: pink;
+    /* background-color: lightgrey; */
+    font-size: large;
+}
+
+div{
+    border: 2px solid black;
+    margin-left: 100px;
+    opacity: 0.1;
+}
+
+p.child{
+    margin-left: inherit;
+}

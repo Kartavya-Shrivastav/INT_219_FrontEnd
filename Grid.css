@@ -1,0 +1,71 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+.header{
+    grid-area: header;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+}
+
+
+.main{
+    grid-area: main;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+
+.footer{
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+/* Responsive Web Desgin for screens smaller than 768 px */
+/* Must be added in the project */
+@media (max-width: 768px){
+    .grid-container{
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        border-right: none;
+        border-top: 1px solid #ddd;
+    }
+}
+

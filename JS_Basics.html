@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <script>
+        // document.getElementById("btn").addEventListener("click", function(){
+        //     alert("Hello, Welcome to my Page");
+        // });
+
+        document.getElementById("btn1").addEventListener("click", function () {
+            confirm("Confirm Please");
+        });
+
+        function greet() {
+            alert("Greeting from function 'greet'");
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("btn").addEventListener("click", function () {
+                alert("Button Clicked!")
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to my Page</h1>
+    <button id="btn">Click Me</button>
+    <button id="btn1">Confirm</button>
+    
+
+    <button onclick="greet()">Click Me 2</button>
+</body>
+</html>

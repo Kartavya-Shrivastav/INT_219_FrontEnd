@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA 1</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-200 width-full flex items-center justify-center min-h-screen">
+    <div class="container max-w-xl shadow-2xl px-6 py-4 rounded-lg bg-white ">
+        <form action="#" >
+            <h1 class="text-2xl font-bold">Book Your Stay</h1>
+            <div class="mt-5 flex justify-around width-full gap-2">
+                <div>
+                    <label for="check-in" class="text-sm mt-10">Check-in</label><br>
+                    <input type="date" name="check-in" id="check-in" class="border-1 border-gray-400 rounded-lg px-3 w-64">
+                </div>
+                <div>
+                    <label for="check-in" class="text-sm mt-10">Check-out</label><br>
+                    <input type="date" name="check-in" id="check-in" class="border-1 border-gray-400 rounded-lg px-3 w-64">
+                </div>
+            </div>
+
+            <h2 class="font-semibold mt-5 text-sm pl-1">Select Room Type</h2>
+            <div class="mt-2 flex justify-around">
+                <div class="border-1 border-gray-400 rounded-md pl-2 pr-15 py-1 h-12 w-42">
+                    <h3 class="font-semibold text-sm">Standard</h3>
+                    <h3 class="text-gray-400 text-sm">$99/night</h3>
+                </div>
+                <div class="border-1 border-gray-400 rounded-md pl-2 pr-15 py-1 h-12 w-42">
+                    <h3 class="font-semibold text-sm">Deluxe</h3>
+                    <h3 class="text-gray-400 text-sm">$149/night</h3>
+                </div>
+                <div class="border-1 border-gray-400 rounded-md pl-2 pr-15 py-1 h-12 w-42">
+                    <h3 class="font-semibold text-sm">Suite</h3>
+                    <h3 class="text-gray-400 text-sm">$199/night</h3>
+                </div>
+            </div>
+
+            <div class="bg-gray-200 mt-5 width-full rounded-lg py-2 px-3 relative text-sm">
+                <div>
+                    <span class="">Total Nights</span>
+                    <span class="absolute right-3">0</span>
+                </div>
+                <div class="font-bold">
+                    <span class="">Total Price</span>
+                    <span class="absolute right-3">$0</span>
+                </div>
+
+                <div class="bg-gray-600 rounded-lg width-full mt-3">
+                    <p class="text-sm text-gray-100 font-bold justify-center py-1 text-center ">Confirm Booking</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

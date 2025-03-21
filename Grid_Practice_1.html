@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container{
+            display: grid;
+            grid-template-areas:
+            "A B C"
+            "D D D"
+            "E E E";
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto auto auto;
+            height: 100vh;
+        }
+
+        .a{
+            grid-area: A;
+            background-color: red;
+            color: white;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            border: 1px solid white;
+        }
+
+        .b{
+            grid-area: B;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            border: 1px solid white;
+        }
+        .c{
+            grid-area: C;
+            background-color: #4CAF50;;
+            color: white;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            border: 1px solid white;
+        }
+        .d{
+            grid-area: D;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            border: 1px solid white;
+        }
+        .e{
+            grid-area: E;
+            background-color: purple;
+            color: white;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="grid-container">
+        <aside class="sidebar"> Area A</aside>
+        <div class="upper">Area B</div>
+        <div class="lower">Area C</div>
+    </div> -->
+
+    <div class="grid-container">
+        <div class="a"> Area A </div>
+        <div class="b"> Area B </div>
+        <div class="c"> Area C </div>
+        <div class="d"> Area D </div>
+        <div class="e"> Area E </div>
+    </div>
+</body>
+</html>
