@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J Query Odd Even Selector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        li{
+            padding: 8px;
+            margin: 5px 0;
+            list-style: none;
+            border: 1px solid #ccc;
+        }
+
+        .even{
+            background-color: #e0f7fa;
+        }
+        
+        .odd{
+            background-color: #ffe0b2;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Fruit List (Even/Odd Highlight)</h2>
+    <ul id="FruitList">
+        <li>🍎 Apple</li>
+        <li>🍌 Banana</li>
+        <li>🍇 Grape</li>
+        <li>🍉 Watermelon</li>
+        <li>🍍 Pineapple</li>
+        <li>🍒 Cherry</li>
+    </ul>
+
+    <button id="evenBtn">Highlight Even</button>
+    <button id="oddBtn">Highlight Odd</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#evenBtn").click(function(){
+                $("#FruitList li").removeClass("even odd");
+                $('#FruitList li:even').addClass("even");
+            });
+
+            $("#oddBtn").click(function(){
+                $("#FruitList li").removeClass("even odd");
+                $('#FruitList li:odd').addClass("odd");
+            });
+
+            $("#resetBtn").click(function(){
+                $("#FruitList li").removeClass("even odd");
+            });
+        });
+    </script>
+</body>
+</html>
