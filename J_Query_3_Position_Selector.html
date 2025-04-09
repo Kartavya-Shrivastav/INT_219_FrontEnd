@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Position Selector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    
+        li {
+            padding: 5px;
+            margin: 4px;
+            list-style: none;
+            border: 1px solid #ddd;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <h2>Fruit List (Even/Odd Highlight)</h2>
+        <ul id="FruitList">
+            <li>🍎 Apple</li>
+            <li>🍌 Banana</li>
+            <li>🍇 Grape</li>
+            <li>🍉 Watermelon</li>
+            <li>🍍 Pineapple</li>
+            <li>🍒 Cherry</li>
+        </ul>
+
+        <button id="highlightBtn">Highlight with Jquery</button>
+        
+        <script>
+            $(document).ready(function() {
+                $("#highlightBtn").click(function() {
+                    $("#FruitList li:first").css("background-color", "#d0f0c0");
+                    $('#FruitList li:last').css("background-color", "#fddde6");
+                    $('#FruitList li:eq(2)').css({
+                        "background-color": "#ffffcc",
+                        "font-weight": "bold"
+                    });
+                    // $("#FruitList li:not(:eq(2))").css("opacity", "0.6");
+                });
+            });
+            
+        </script>
+    </body>
+    
+    </html>
