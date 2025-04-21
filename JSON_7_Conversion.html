@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON Object to String Conversion</h1>
+    <h2>JSON Object to String</h2>
+    <pre id="jsonStringOutput"></pre>
+    <h2>2. String to JSON Object</h2>
+    <textarea id="jsonInput">
+        {"name": "Alice", "age": 28, "email": "alice@example.com"}
+    </textarea>
+    <button onclick="convertStringToJson()">Convert String to JSON</button>
+    <pre id="parsedJsonObject"></pre>
+
+    <script>
+        const user = {
+            name: "Alice",
+            age: 28,
+            email: "alice@example.com"
+        };
+
+        const jsonString = JSON.stringify(user, null, 2); // Pretty Format
+        document.getElementById("jsonStringOutput").textContent = jsonString;
+
+        // String to JSON Object
+        function convertStringToJson() {
+            const input = document.getElementById("jsonInput").value;
+            const jsonObj = JSON.parse(input);
+            if(input){
+                document.getElementById("parsedJsonObject").textContent = `Name: ${jsonObj.name}\nAge: ${jsonObj.age}\nEmail: ${jsonObj.email}`;
+            } else{
+                document.getElementById("parsedJsonObject").textContent = "Invalid JSON string.";
+            }
+
+            console.log(`Name: ${jsonObj.name}, Age: ${jsonObj.age}, Email: ${jsonObj.email}`);
+        }
+    </script>
+
+</body>
+</html>
