@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div id="box" class="p-30 text-center border-4 border-pink-300 bg-pink-500 ">Hover or Click</div>
+    <p id="message" class="text-center">Mouse event info will appear here</p>
+
+    <script>
+        const box=document.getElementById("box");
+        const message=document.getElementById("message");
+
+        box.addEventListener("click",()=>{
+            message.textContent="Box Clicked";
+            box.style.backgroundColor="yellow";
+        });
+
+        box.addEventListener("dblclick",()=>{
+            message.textContent="Box Double-Clicked";
+            box.style.backgroundColor="orange";
+        });
+
+        box.addEventListener("mouseover",()=>{
+            message.textContent="Mouse over the box";
+            box.style.backgroundColor="lightgreen";
+        });
+
+        box.addEventListener("mouseout",()=>{
+            message.textContent="Mouse Left the Box";
+            box.style.backgroundColor="lightblue";
+        });
+
+        box.addEventListener("mousemove",(event)=>{
+            message.textContent=`Mouse Moving - X : ${event.offsetX} and Y : ${event.offsetY}`;
+            box.style.backgroundColor="yellow";
+        });
+
+        
+    </script>
+</body>
+</html>
