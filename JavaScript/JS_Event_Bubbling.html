@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="outer bg-blue-500 p-4 text-white" id="outerDiv">
+        Outer Div
+        <div class="inner bg-green-500 p-4 text-white mt-2" id="innerDiv">
+            Inner Div
+            <button class="bg-red-500 p-2 text-white mt-2 rounded" id="clickButton">Click Me</button>
+        </div>
+    </div>
+    <p>Click the button to see event bubbling in action.</p>
+    <p id="message"></p>
+
+    <button class="bg-gray-500 p-2 text-white mt-2 rounded" id="removeListenerButton">Remove Event Listeners</button>
+
+    <script>
+        const outerDiv = document.getElementById("outerDiv");
+        const innerDiv = document.getElementById("innerDiv");
+        const clickButton = document.getElementById("clickButton");
+        const message = document.getElementById("message");
+        const removeListenerButton = document.getElementById("removeListenerButton");
+
+        function outerDivHandler() {
+            message.textContent = "Outer Div Clicked! (Bubbling)";
+        }
+
+        function innerDivHandler() {
+            message.textContent = "Inner Div Clicked! (Bubbling)";
+        }
+
+        function buttonHandler() {
+            message.textContent = "Button Clicked";
+        }
+
+        outerDiv.addEventListener("click", outerDivHandler);
+        innerDiv.addEventListener("click", innerDivHandler);
+        clickButton.addEventListener("click", buttonHandler);
+
+        removeListenerButton.addEventListener("click", function() {
+            outerDiv.removeEventListener("click", outerDivHandler);
+            innerDiv.removeEventListener("click", innerDivHandler);
+            clickButton.removeEventListener("click", buttonHandler);
+            message.textContent = "Event listeners removed.";
+        });
+        
+        outerDiv.addEventListener("click", function () {
+            message.textContent = "Outer Div Clicked! (Bubbling)";
+        });
+
+        innerDiv.addEventListener("click", function () {
+            message.textContent = "Inner Div Clicked! (Bubbling)";
+        });
+
+        clickButton.addEventListener("click", function () {
+            message.textContent = "Button Clicked";
+        });
+
+        
+    </script>
+</body>
+
+</html>
