@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .user-card {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #userList {
+            max-width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>User List</h1>
+    <button class="loadBtn">Load Users</button>
+    <div id="userList"></div>
+
+    <script>
+
+        const jsonData = {
+            users: [
+                {name: "Alice", age: 28, email: "alice@example.com"},
+                {name: "Bob", age: 35, email: "bob@example.com"},
+                {name: "Charlie", age: 22, email: "charlie@example.com"},
+            ]
+        };
+
+        const button = document.querySelector('.loadBtn');
+        const listContainer = document.querySelector('#userList');
+
+        // Event listener on button click
+
+        button.addEventListener('click', () => {
+            // Clear previous content
+            listContainer.innerHTML = '';
+
+            // Loop through the users and create elements
+            jsonData.users.forEach(user => {
+                const userCard = document.createElement('div');
+                userCard.classList.add('user-card');
+                userCard.innerHTML = `
+                    <p><strong>Name:</strong> ${user.name}</p>
+                    <p><strong>Age:</strong> ${user.age}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                `;
+                listContainer.appendChild(userCard);
+            });
+        });
+        
+    </script>
+</body>
+</html>
