@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .lightbox.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center py-10">
+    <h2 class="text-2xl font-bold mb-4">Interactive Image Gallery</h2>
+
+    <div class="flex flex-wrap gap-4 justify-center" id="gallery"></div>
+
+    <div id="lightbox" class="lightbox">
+        <img src="" alt="Large preview" id="lightboxImage">
+    </div>
+
+    <script>
+        const imageSources = [
+            "JS_Thumbnail_and_Light_Box_Pic1.webp",
+            "JS_Thumbnail_and_Light_Box_Pic2.webp",
+            "JS_Thumbnail_and_Light_Box_Pic3.webp",
+            "JS_Thumbnail_and_Light_Box_Pic4.jpg",
+        ];
+
+        const gallery = document.getElementById("gallery");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+
+        function createGallery() {
+            imageSources.forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.alt = "Gallery Image";
+                img.classList = "w-32 h-24 object-cover border rounded-lg cursor-pointer hover:scale-110 transition-transform duration-300";
+                img.addEventListener("click", function () {
+                    lightboxImage.src = src;
+                    lightbox.classList.add("show");
+                });
+                gallery.appendChild(img);
+            });
+        }
+
+        lightbox.addEventListener("click", function () {
+            lightbox.classList.remove("show");
+        });
+
+        createGallery();
+    </script>
+</body>
+
+</html>
